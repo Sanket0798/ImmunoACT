@@ -14,152 +14,208 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        md: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
-      },
-      screens: {
-        xs: "100%",
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1230px",
-        "2xl": "1340px",
-        "3xl": "1340px",
-      },
-    },
-    extend: {
-      colors: {
-        footer: "#111204",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: {
-          light: "#FF8533",
-          DEFAULT: "#FF6400",
-          dark: "#CC5000",
-        },
-        secondary: {
-          light: "#004D73",
-          DEFAULT: "#003049",
-          dark: "#00202F",
-        },
-        accent: {
-          light: "#d4f3ef",
-          DEFAULT: "#34d399",
-          dark: "#0f766e",
-        },
-        neutral: {
-          light: "#f3f4f6",
-          DEFAULT: "#9ca3af",
-          dark: "#4b5563",
-        },
-        dark: {
-          main: "#1F1D2B",
-          card: "#252836",
-          light: "#353949",
-          hover: "#2f3343",
-        },
-        "main-bg": "#fff",
-        "main-dark": "#1F1D2B",
-        "card-dark": "#252836",
-        "dark-light": "#353949",
-        "hover-color-dark": "#2f3343",
-        blue: "#1fb6ff",
-        purple: "#3f3cbb",
-        pink: "#ff49db",
-        orange: "#ff7849",
-        green: "#13ce66",
-        yellow: "#ffc82c",
-        "gray-dark": "#273444",
-        gray: "#8492a6",
-        "gray-light": "#d3dce6",
-        h3: "#252623",
-        formInputBg: "#f5f5f5",
-      },
-      fontFamily: {
-        sans: ["Poppins", "Outfit", ...fontFamily.sans],
-        questrial: "Questrial",
-        manrope: ["Manrope", "sans-serif"],
-        pockota: ["Pockota", "sans-serif"],
-        "mona-sans": ["Mona Sans", "sans-serif"],
-        macondo: ['"Macondo"', "sans-serif"],
-        lexend: ["Lexend", "sans-serif"],
-      },
-      gridTemplateColumns: {
-        "16-auto": "250px auto",
-      },
-      zIndex: {
-        "-10": "-10",
-        60: "60",
-        70: "70",
-      },
-      padding: {
-        safe: "env(safe-area-inset)",
-      },
-      aspectRatio: {
-        "16/9": [16, 9],
-        "4/3": [4, 3],
-        "1/1": [1, 1],
-      },
-      lineHeight: {
-        tighter: "1.1",
-        relaxed: "1.8",
-      },
-      letterSpacing: {
-        wider: ".05em",
-        tightest: "-.05em",
-      },
-      fontSize: {
-        xs: "var(--font-size-xs)", // Extra small (varies, typically around 12px)
-        sm: "var(--font-size-sm)", // Small (varies, typically around 14px)
-        base: "var(--font-size-base)", // Base (typically 16px)
-        lg: "var(--font-size-lg)", // Large (typically 18px)
-        xl: "var(--font-size-xl)", // Extra large (typically 20px)
-        "2xl": "var(--font-size-2xl)", // 2x extra large (typically 24px)
-        "3xl": "var(--font-size-3xl)", // 3x extra large (typically 30px)
-        "4xl": "var(--font-size-4xl)", // 4x extra large (typically 36px)
-        custom: "16px", // Custom size (16px)
-      },
-      backgroundImage: {
-        "footer-gradient":
-          "linear-gradient(to right, #0e1c26, #2a454b, #294861)",
-      },
-      textAlign: {
-        left: "left",
-        center: "center",
-        right: "right",
-      },
-      borderRadius: {
-        sm: "0.125rem", // Small border radius (2px)
-        DEFAULT: "0.25rem", // Default border radius (4px)
-        md: "0.375rem", // Medium border radius (6px)
-        lg: "0.5rem", // Large border radius (8px)
-        xl: "0.75rem", // Extra large border radius (12px)
-        "2xl": "1rem", // 2x extra large border radius (16px)
-        "3xl": "1.5rem", // 3x extra large border radius (24px)
-        full: "9999px", // Full border radius for circles
-      },
-      animation: {
-        spinSlow: "spin 4s linear infinite",
-        shimmer: "shimmer 2s linear infinite",
-      },
-      keyframes: {
-        shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
-        },
-      },
-    },
+  	container: {
+  		center: true,
+  		padding: {
+  			DEFAULT: '1rem',
+  			sm: '1.5rem',
+  			md: '2rem',
+  			lg: '4rem',
+  			xl: '5rem',
+  			'2xl': '6rem'
+  		},
+  		screens: {
+  			xs: '100%',
+  			sm: '640px',
+  			md: '768px',
+  			lg: '1024px',
+  			xl: '1230px',
+  			'2xl': '1340px',
+  			'3xl': '1340px'
+  		}
+  	},
+  	extend: {
+  		colors: {
+  			footer: '#111204',
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			primary: {
+  				light: '#FF8533',
+  				DEFAULT: 'hsl(var(--primary))',
+  				dark: '#CC5000',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				light: '#004D73',
+  				DEFAULT: 'hsl(var(--secondary))',
+  				dark: '#00202F',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			accent: {
+  				light: '#d4f3ef',
+  				DEFAULT: 'hsl(var(--accent))',
+  				dark: '#0f766e',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			neutral: {
+  				light: '#f3f4f6',
+  				DEFAULT: '#9ca3af',
+  				dark: '#4b5563'
+  			},
+  			dark: {
+  				main: '#1F1D2B',
+  				card: '#252836',
+  				light: '#353949',
+  				hover: '#2f3343'
+  			},
+  			'main-bg': '#fff',
+  			'main-dark': '#1F1D2B',
+  			'card-dark': '#252836',
+  			'dark-light': '#353949',
+  			'hover-color-dark': '#2f3343',
+  			blue: '#1fb6ff',
+  			purple: '#3f3cbb',
+  			pink: '#ff49db',
+  			orange: '#ff7849',
+  			green: '#13ce66',
+  			yellow: '#ffc82c',
+  			'gray-dark': '#273444',
+  			gray: '#8492a6',
+  			'gray-light': '#d3dce6',
+  			h3: '#252623',
+  			formInputBg: '#f5f5f5',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		fontFamily: {
+  			sans: [
+  				'Poppins',
+  				'Outfit',
+                    ...fontFamily.sans
+                ],
+  			questrial: 'Questrial',
+  			manrope: [
+  				'Manrope',
+  				'sans-serif'
+  			],
+  			pockota: [
+  				'Pockota',
+  				'sans-serif'
+  			],
+  			'mona-sans': [
+  				'Mona Sans',
+  				'sans-serif'
+  			],
+  			macondo: [
+  				'Macondo"',
+  				'sans-serif'
+  			],
+  			lexend: [
+  				'Lexend',
+  				'sans-serif'
+  			]
+  		},
+  		gridTemplateColumns: {
+  			'16-auto': '250px auto'
+  		},
+  		zIndex: {
+  			'60': '60',
+  			'70': '70',
+  			'-10': '-10'
+  		},
+  		padding: {
+  			safe: 'env(safe-area-inset)'
+  		},
+  		aspectRatio: {
+  			'16/9': [
+  				16,
+  				9
+  			],
+  			'4/3': [
+  				4,
+  				3
+  			],
+  			'1/1': [
+  				1,
+  				1
+  			]
+  		},
+  		lineHeight: {
+  			tighter: '1.1',
+  			relaxed: '1.8'
+  		},
+  		letterSpacing: {
+  			wider: '.05em',
+  			tightest: '-.05em'
+  		},
+  		fontSize: {
+  			xs: 'var(--font-size-xs)',
+  			sm: 'var(--font-size-sm)',
+  			base: 'var(--font-size-base)',
+  			lg: 'var(--font-size-lg)',
+  			xl: 'var(--font-size-xl)',
+  			'2xl': 'var(--font-size-2xl)',
+  			'3xl': 'var(--font-size-3xl)',
+  			'4xl': 'var(--font-size-4xl)',
+  			custom: '16px'
+  		},
+  		backgroundImage: {
+  			'footer-gradient': 'linear-gradient(to right, #0e1c26, #2a454b, #294861)'
+  		},
+  		textAlign: {
+  			left: 'left',
+  			center: 'center',
+  			right: 'right'
+  		},
+  		borderRadius: {
+  			sm: 'calc(var(--radius) - 4px)',
+  			DEFAULT: '0.25rem',
+  			md: 'calc(var(--radius) - 2px)',
+  			lg: 'var(--radius)',
+  			xl: '0.75rem',
+  			'2xl': '1rem',
+  			'3xl': '1.5rem',
+  			full: '9999px'
+  		},
+  		animation: {
+  			spinSlow: 'spin 4s linear infinite',
+  			shimmer: 'shimmer 2s linear infinite'
+  		},
+  		keyframes: {
+  			shimmer: {
+  				from: {
+  					backgroundPosition: '0 0'
+  				},
+  				to: {
+  					backgroundPosition: '-200% 0'
+  				}
+  			}
+  		}
+  	}
   },
   corePlugins: {
     aspectRatio: false,
@@ -249,7 +305,7 @@ module.exports = {
       };
       addUtilities(newUtilities);
     }),
-    // require("addVariablesForColors"),
-  ],
-  darkMode: "class",
+      require("tailwindcss-animate")
+],
+  darkMode: ["class", "class"],
 };
