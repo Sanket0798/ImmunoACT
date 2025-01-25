@@ -111,7 +111,15 @@ html {
   font-family: "Pockota";
   font-weight: 400;
   font-style: normal;
-  src: url("/fonts/Pockota/Pockota-LightItalic.otf") format("truetype");
+  src: url("/fonts/Pockota-LightItalic/Pockota-LightItalic.otf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Pockota";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Pockota-Medium/Pockota-Medium.otf") format("truetype");
 }
 
 @keyframes custom-bounce {
