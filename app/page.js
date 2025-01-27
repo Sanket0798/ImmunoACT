@@ -1,7 +1,11 @@
-import Image from "next/image";
+"use client";
+import Layout from "./component/layout/Layout";
+import HeroSection from "./component/sections/HeroSection";
 
 export default function Home() {
   return (
-    <p className="flex-center-center min-h-screen text-3xl">ImmunoACT HomePage</p>
+    <Layout>
+      <HeroSection />
+    </Layout>
   );
 }
