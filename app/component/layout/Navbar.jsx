@@ -100,7 +100,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link
+          {/* <Link
             href="/"
             className="relative z-50 flex items-center"
             onClick={() => setIsOpen(false)}
@@ -111,6 +111,22 @@ const Navbar = () => {
               width={160}
               height={57}
               // className="h-8 w-10 sm:h-10 sm:w-12 lg:h-12 lg:w-14"
+              priority
+            />
+          </Link> */}
+
+          <Link
+            href="/"
+            className="relative z-50 flex items-center"
+            onClick={() => setIsOpen(false)}
+          >
+            <Image
+              // src="/assets/images/global/Logo.png"
+              src="/assets/common/ImmunoACT_Logo.png"
+              alt="Brand Logo"
+              width={160}
+              height={57}
+              className=""
               priority
             />
           </Link>
