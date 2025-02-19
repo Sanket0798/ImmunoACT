@@ -5,7 +5,7 @@ import HeroSection from "./component/sections/HeroSection";
 export default function Home() {
   return (
     <Layout>
-      <HeroSection />
+      {/* <HeroSection /> */}
     </Layout>
   );
 }

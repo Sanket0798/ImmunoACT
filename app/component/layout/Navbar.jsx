@@ -9,10 +9,10 @@ import Image from "next/image";
 
 // Memoized navigation items to prevent unnecessary re-renders
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Works", href: "/works" },
-  { name: "About", href: "/about" },
-  { name: "FAQ", href: "/faq" },
+  { name: "About", href: "/" },
+  { name: "Our Science", href: "/works" },
+  { name: "NexCAR19", href: "/about" },
+  { name: "Careers", href: "/faq" },
 ];
 
 // Memoized navigation link component for better performance
@@ -106,11 +106,11 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             <Image
-              src="/assets/images/Common/Navbar/Logo.png"
+              src="/assets/Common/ImmunoACT_Logo.png"
               alt="Brand Logo"
-              width={56}
-              height={48}
-              className="h-8 w-10 sm:h-10 sm:w-12 lg:h-12 lg:w-14"
+              width={160}
+              height={57}
+              // className="h-8 w-10 sm:h-10 sm:w-12 lg:h-12 lg:w-14"
               priority
             />
           </Link>
