@@ -9,9 +9,9 @@ import Image from "next/image";
 
 // Memoized navigation items to prevent unnecessary re-renders
 const navigation = [
-  { name: "About", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Our Science", href: "/works" },
-  { name: "NexCAR19", href: "/about" },
+  { name: "NexCAR19", href: "/nexcar19" },
   { name: "Careers", href: "/faq" },
 ];
 
@@ -100,28 +100,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          {/* <Link
-            href="/"
-            className="relative z-50 flex items-center"
-            onClick={() => setIsOpen(false)}
-          >
-            <Image
-              src="/assets/Common/ImmunoACT_Logo.png"
-              alt="Brand Logo"
-              width={160}
-              height={57}
-              // className="h-8 w-10 sm:h-10 sm:w-12 lg:h-12 lg:w-14"
-              priority
-            />
-          </Link> */}
-
           <Link
             href="/"
             className="relative z-50 flex items-center"
             onClick={() => setIsOpen(false)}
           >
             <Image
-              // src="/assets/images/global/Logo.png"
               src="/assets/common/ImmunoACT_Logo.png"
               alt="Brand Logo"
               width={160}
@@ -196,7 +180,6 @@ const Navbar = () => {
                 className="fixed inset-0 top-16 bg-white z-40 lg:hidden overflow-y-auto"
                 aria-label="Mobile navigation"
               >
-                {/* <nav className="flex flex-col items-center justify-start pt-8 px-4 h-[calc(100vh-4rem)]"> */}
                 <nav className="flex flex-col items-center justify-start pt-8 px-4 h-[calc(100vh-4rem)] max-w-[360px] w-full mx-auto">
                   {navigation.map((item, index) => (
                     <motion.div
@@ -236,11 +219,3 @@ const Navbar = () => {
 };
 
 export default memo(Navbar);
-
-// import React from "react";
-
-// const Navbar = () => {
-//   return <div>Navbar</div>;
-// };
-
-// export default Navbar;

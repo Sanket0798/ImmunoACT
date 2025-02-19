@@ -1,11 +1,11 @@
 "use client";
 import Layout from "./component/layout/Layout";
-import HeroSection from "./component/sections/HeroSection";
+import HomePage from "./pages/HomePage";
 
 export default function Home() {
   return (
     <Layout>
-      {/* <HeroSection /> */}
+      <HomePage />
     </Layout>
   );
 }
