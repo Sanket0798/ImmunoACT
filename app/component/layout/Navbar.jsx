@@ -7,31 +7,132 @@ import { cn } from "../../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-// Memoized navigation items to prevent unnecessary re-renders
+// Updated navigation items with dropdown menus
 const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Our Science", href: "/works" },
-  { name: "NexCAR19", href: "/nexcar19" },
+  {
+    name: "About",
+    href: "/about",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Our Story", href: "/about/our-story" },
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "Partners", href: "/about/partners" },
+    ],
+  },
+  {
+    name: "Our Science",
+    href: "/works",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Technology", href: "/works/technology" },
+      { name: "Research", href: "/works/research" },
+      { name: "Publications", href: "/works/publications" },
+    ],
+  },
+  {
+    name: "NexCAR19",
+    href: "/nexcar19",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Overview", href: "/nexcar19/overview" },
+      { name: "Clinical Trials", href: "/nexcar19/trials" },
+      { name: "Patient Information", href: "/nexcar19/patients" },
+    ],
+  },
   { name: "Careers", href: "/faq" },
 ];
 
-// Memoized navigation link component for better performance
-const NavLink = memo(({ href, name, isActive, isMobile, onClick }) => (
-  <Link
-    href={href}
-    className={cn(
-      "relative font-medium transition-colors hover:text-[#ff6300]",
-      isMobile ? "block w-full text-center py-4 text-lg" : "px-3 py-2 text-sm",
-      isActive ? "text-[#400406]" : "text-gray-600",
-      !isMobile &&
-        "before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:origin-left before:scale-x-0 before:bg-[#400406] before:transition-transform hover:before:scale-x-100",
-      !isMobile && isActive && "before:scale-x-100"
-    )}
-    onClick={onClick}
-  >
-    {name}
-  </Link>
-));
+// Updated NavLink component to include dropdown
+const NavLink = memo(
+  ({ href, name, isActive, isMobile, onClick, hasDropdown, dropdownItems }) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    return (
+      <div className="relative group">
+        <div className="flex items-center">
+          <Link
+            href={hasDropdown ? "#" : href}
+            className={cn(
+              "relative font-medium transition-colors hover:text-[#ff6300]",
+              isMobile
+                ? "block w-full text-center py-4 text-lg"
+                : "px-3 py-2 text-sm",
+              isActive ? "text-[#400406]" : "text-gray-600",
+              !isMobile &&
+                "before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:origin-left before:scale-x-0 before:bg-[#400406] before:transition-transform hover:before:scale-x-100",
+              !isMobile && isActive && "before:scale-x-100"
+            )}
+            onClick={(e) => {
+              if (hasDropdown) {
+                e.preventDefault();
+                setIsDropdownOpen(!isDropdownOpen);
+              }
+              onClick && onClick();
+            }}
+          >
+            <span className="flex items-center gap-1">
+              {name}
+              {hasDropdown && (
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              )}
+            </span>
+          </Link>
+        </div>
+
+        {/* Desktop Dropdown */}
+        {!isMobile && hasDropdown && (
+          <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md overflow-hidden">
+            {dropdownItems?.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#ff6300]"
+                onClick={onClick}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Mobile Dropdown */}
+        {isMobile && hasDropdown && isDropdownOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="bg-gray-50 w-full"
+          >
+            {dropdownItems?.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#ff6300] text-center"
+                onClick={onClick}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </div>
+    );
+  }
+);
 NavLink.displayName = "NavLink";
 
 // Memoized contact button component
@@ -160,6 +261,10 @@ const Navbar = () => {
                   href={item.href}
                   name={item.name}
                   isActive={pathname === item.href}
+                  isMobile={false}
+                  onClick={() => setIsOpen(false)}
+                  hasDropdown={item.hasDropdown}
+                  dropdownItems={item.dropdownItems}
                 />
               ))}
             </div>
@@ -194,7 +299,9 @@ const Navbar = () => {
                         name={item.name}
                         isActive={pathname === item.href}
                         isMobile
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => setIsOpen(true)}
+                        hasDropdown={item.hasDropdown}
+                        dropdownItems={item.dropdownItems}
                       />
                     </motion.div>
                   ))}
