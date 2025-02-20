@@ -1,7 +1,26 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ['images.unsplash.com'],
+//   },
+// }
+
+// module.exports = nextConfig 
+
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'https://immunoact.vercel.app/',  // replace with your actual domain
+        port: '',
+        pathname: '/**',
+      },
+      // Add more patterns if needed
+    ],
   },
 }
 
