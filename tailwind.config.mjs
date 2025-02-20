@@ -126,6 +126,10 @@ module.exports = {
 					'Pockota',
 					'sans-serif'
 				],
+				aboro: [
+					'var(--font-aboro)',
+					'sans-serif'
+				],
 				'mona-sans': [
 					'Mona Sans',
 					'sans-serif'

@@ -36,7 +36,7 @@
 }
 
 body {
-  font-family: "Poppins", "Macondo", "Pockota", "Manrope", "Open Sans", "Outfit",
+  font-family: "Poppins", "Macondo", "Pockota", "Aboro", "Manrope", "Open Sans", "Outfit",
     "Mona Sans", sans-serif;
   background-color: var(--background);
   min-height: 100vh;
@@ -110,6 +110,13 @@ html {
   font-weight: 400;
   font-style: normal;
   src: url("/fonts/Pockota-Medium/Pockota-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Aboro";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Aboro/Aboro.otf") format("truetype");
 }
 
 @keyframes custom-bounce {
