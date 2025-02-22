@@ -15,7 +15,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'https://immunoact.vercel.app/',  // replace with your actual domain
+        hostname: 'immunoact.vercel.app',  // replace with your actual domain
         port: '',
         pathname: '/**',
       },
