@@ -112,7 +112,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "Outfit", ...fontFamily.sans],
+        sans: ["Poppins", "Outfit", "Avenir", ...fontFamily.sans],
         questrial: "Questrial",
         manrope: ["Manrope", "sans-serif"],
         pockota: ["Pockota", "sans-serif"],
