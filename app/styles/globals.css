@@ -37,7 +37,7 @@
 
 body {
   font-family: "Poppins", "Macondo", "Pockota", "Aboro", "Manrope", "Open Sans",
-    "Outfit", "Mona Sans", "Astro-Futuristic", sans-serif;
+    "Outfit", "Mona Sans", "Astro-Futuristic", "Avenir", sans-serif;
   background-color: var(--background);
   min-height: 100vh;
   overflow-x: hidden;
@@ -126,6 +126,24 @@ html {
   src: url("/fonts/Astro-futuristic/as.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Avenir/Avenir-Roman.otf") format("opentype"),
+    url("/fonts/Avenir/Avenir-Roman.woff2") format("woff2"),
+    url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/Avenir/Avenir-Roman.otf") format("opentype"),
+    url("/fonts/Avenir/Avenir-Roman.woff2") format("woff2"),
+    url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
+}
+
 @keyframes custom-bounce {
   0%,
   100% {
@@ -204,4 +222,14 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+footer {
+  font-family: "Avenir", sans-serif;
+  font-weight: 700;
+}
+
+.avenir-font {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 700;
 }
