@@ -144,6 +144,33 @@ html {
     url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Avenir";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/fonts/Avenir/Avenir-Roman.otf") format("opentype"),
+    url("/fonts/Avenir/Avenir-Roman.woff2") format("woff2"),
+    url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/Avenir/Avenir-Roman.otf") format("opentype"),
+    url("/fonts/Avenir/Avenir-Roman.woff2") format("woff2"),
+    url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 900;
+  font-style: normal;
+  src: url("/fonts/Avenir/Avenir-Roman.otf") format("opentype"),
+    url("/fonts/Avenir/Avenir-Roman.woff2") format("woff2"),
+    url("/fonts/Avenir/Avenir-Roman.woff") format("woff");
+}
+
 @keyframes custom-bounce {
   0%,
   100% {
@@ -230,6 +257,6 @@ footer {
 }
 
 .avenir-font {
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
   font-weight: 700;
 }
