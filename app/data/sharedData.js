@@ -85,3 +85,28 @@ export const socialLinks = [
         icon: <FooterYouTube />,
     },
 ];
+
+export const questions = [
+    {
+        question: "What is Leukapheresis and how does NexCAR19 involve it?",
+        answer: `This is the process by which a patient's immune-effector cells are extracted through a
+  machine . A bag of these extracted cells is transported under refrigerated conditions to
+  ImmunoACT. From these, At our facility, we select and activate T-cells on which we
+  manufacture NexCAR19. To be delivered for infusion to the patient.`,
+    },
+    {
+        question: "Why does it take a few weeks for NexCAR19 to be administered?",
+        answer:
+            "NexCAR19 is made from a patient's own T-cells. The cells are sent to our controlled laboratory, cultured, modified, and then multiplied to reach a desirable dose. This takes -19 days from Leukapheresis.",
+    },
+    {
+        question: "How many days after the therapy would CRS be expected?",
+        answer:
+            "Cytokine Release Syndrome (CRS) is the most frequent after-effect of the therapy, but it is expected within the first 4 weeks of the infusion, not long term.",
+    },
+    {
+        question: "How common are the serious side effects?",
+        answer:
+            "In our clinical trials, severe symptoms were seen in N50/0 of patients. These side effects may depend upon several factors, including the pre-existing disease burden and your clinical condition.",
+    },
+];
