@@ -48,6 +48,20 @@ const aboro = localFont({
   variable: '--font-aboro'
 })
 
+const astoFuturistic = localFont({
+  src: [
+    {
+      path: '../public/fonts/Astro-futuristic/as.otf',
+      weight: '400'
+    },
+    {
+      path: '../public/fonts/Astro-futuristic/as.otf',
+      weight: '700'
+    }
+  ],
+  variable: '--font-asto-futuristic'
+});
+
 export const metadata = {
   title: "ImmunoACT",
   description: "ImmunoACT",
@@ -57,7 +71,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${monaSans.variable} ${lexend.variable} ${outfit.variable} ${aboro.variable} antialiased font-sans`}
+        className={`${poppins.variable} ${monaSans.variable} ${lexend.variable} ${outfit.variable} ${aboro.variable} ${astoFuturistic.variable} antialiased font-sans`}
       >
         <HomePage>{children}</HomePage>
         <SpeedInsights />

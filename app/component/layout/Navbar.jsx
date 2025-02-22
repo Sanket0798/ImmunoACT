@@ -95,7 +95,7 @@ const NavLink = memo(
 
         {/* Desktop Dropdown */}
         {!isMobile && hasDropdown && (
-          <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md overflow-hidden">
+          <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white/30 backdrop-blur-md shadow-lg rounded-md overflow-hidden">
             {dropdownItems?.map((item) => (
               <Link
                 key={item.name}
