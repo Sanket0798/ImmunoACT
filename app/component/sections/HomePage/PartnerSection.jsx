@@ -3,14 +3,17 @@ import React, { useMemo } from "react";
 import { cn } from "../../../lib/utils";
 import { Marquee } from "../../../../components/magicui/marquee";
 import { partners } from "../../../data/sharedData";
+import { motion } from "framer-motion";
 
 const PartnerLogo = React.memo(({ img, name }) => {
   return (
-    <div
+    <motion.div
       className={cn(
-        "relative w-[240px] h-[120px] mx-4 flex items-center justify-center",
+        "relative w-[150px] h-[80px] sm:w-[200px] sm:h-[120px] mx-2 sm:mx-4 flex items-center justify-center",
         "transition-all duration-300 ease-in-out"
       )}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       <img
         src={img}
@@ -18,23 +21,41 @@ const PartnerLogo = React.memo(({ img, name }) => {
         className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
         loading="lazy"
       />
-    </div>
+    </motion.div>
   );
 });
 
 PartnerLogo.displayName = "PartnerLogo";
 
-const PartnerSection = () => {
+const PartnerSection = React.memo(() => {
   const partnersList = useMemo(() => partners, []);
 
   return (
-    <section className="relative w-full py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full py-10 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-start mb-10">
-          <h2 className="text-3xl font-bold text-[#19231A] sm:text-4xl">  
-            Our Partners
-          </h2>
-          <p className="mt-4 text-base text-gray-600">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "auto" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center gap-3 sm:gap-4"
+          >
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "3rem" }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="h-[1px] bg-black"
+            ></motion.div>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="text-3xl font-bold text-[#232e24] sm:text-4xl font-outfit"
+            >
+              Our Partners
+            </motion.span>
+          </motion.div>
+          <p className="mt-3 text-sm md:text-base leading-6 font-normal text-gray-600 font-outfit">
             To advance the research and development of our innovative
             gene-modified cell therapies, we are fostering relationships across
             academia, healthcare institutions, and strategic partnerships with
@@ -56,6 +77,6 @@ const PartnerSection = () => {
       </div>
     </section>
   );
-};
+});
 
-export default React.memo(PartnerSection);
+export default PartnerSection;
