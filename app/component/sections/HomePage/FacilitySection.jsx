@@ -9,7 +9,7 @@ const FacilitySection = () => {
           className="block dark:hidden"
           animationStyle="from-center"
           videoSrc="https://www.youtube.com/embed/AwroDnmW-Ds?si=orhVhi6bUqdqfb0P"
-          thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+          thumbnailSrc="/assets/sections/FacilitySection/FacilityThumbnail.jpg"
           thumbnailAlt="Hero Video"
         />
       </div>
