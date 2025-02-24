@@ -116,6 +116,7 @@ module.exports = {
   				'Poppins',
   				'Outfit',
   				'Avenir',
+  				'Nunito Sans',
                     ...fontFamily.sans
                 ],
   			questrial: 'Questrial',
@@ -214,7 +215,8 @@ module.exports = {
   			spinSlow: 'spin 4s linear infinite',
   			shimmer: 'shimmer 2s linear infinite',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			blurText: 'blurText 1s ease-in-out infinite',
   		},
   		keyframes: {
   			shimmer: {
@@ -240,7 +242,11 @@ module.exports = {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
-  			}
+  			},
+  			blurText: {
+  				'0%': { filter: 'blur(0px)' },
+  				'100%': { filter: 'blur(4px)' },
+  			},
   		}
   	}
   },

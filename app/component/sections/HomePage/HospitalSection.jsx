@@ -2,6 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CobeDraggableAuto } from "../../../../components/eldoraui/cobeglobeautodraggable";
+import BlurText from "../../../../animations/BlurText/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const HospitalSection = () => {
   return (
@@ -46,11 +51,19 @@ const HospitalSection = () => {
           <div className="relative z-10 h-auto w-full overflow-hidden rounded-lg border bg-background">
             <CobeDraggableAuto />
           </div>
-          <p className="text-gray-600 text-base sm:text-lg max-w-md mt-4 md:mt-0">
+          {/* <p className="text-gray-600 text-base sm:text-lg max-w-md mt-4 md:mt-0 font-nunito animate-blurText">
             Our strong association with over 80 leading cancer treatment
             hospitals in India ensures hassle-free treatment with our CAR-T cell
             therapies.
-          </p>
+          </p> */}
+          <BlurText
+            text={`Our strong association with over 80\nleading cancer treatment hospitals in India ensures hassle-free treatment with our CAR-T cell therapies.`}
+            delay={150}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="text-right text-3xl font-semibold"
+          />
         </div>
       </div>
     </section>
