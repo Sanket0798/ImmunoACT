@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SplitText from "../../../../animations/SplitText/SplitText";
-import CountUp from "../../../../animations/CountUp/CountUp";
+import CountUp from "@/animations/CountUp/CountUp";
 
 export default function Home() {
   const fadeIn = {

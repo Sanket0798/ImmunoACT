@@ -59,29 +59,55 @@ export const contactInfo = [
 ];
 
 export const socialLinks = [
+  // {
+  //   name: "Facebook",
+  //   href: "#",
+  //   icon: <FooterMeta />,
+  // },
+  // {
+  //   name: "Instagram",
+  //   href: "#",
+  //   icon: <FooterInstagram />,
+  // },
+  // {
+  //   name: "Twitter",
+  //   href: "#",
+  //   icon: <FooterTwitter />,
+  // },
+  // {
+  //   name: "LinkedIn",
+  //   href: "#",
+  //   icon: <FooterLinkedIn />,
+  // },
+  // {
+  //   name: "Youtube",
+  //   href: "#",
+  //   icon: <FooterYouTube />,
+  // },
+
   {
     name: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61563446237123",
     icon: <FooterMeta />,
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/actimmuno/",
     icon: <FooterInstagram />,
   },
   {
     name: "Twitter",
-    href: "#",
+    href: "https://x.com/ActImmuno",
     icon: <FooterTwitter />,
   },
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/77707171/admin/dashboard/",
     icon: <FooterLinkedIn />,
   },
   {
     name: "Youtube",
-    href: "#",
+    href: "https://www.youtube.com/@immunoact4858",
     icon: <FooterYouTube />,
   },
 ];
