@@ -33,7 +33,7 @@ const HospitalSection = () => {
             Our Partner Hospitals
           </motion.span>
         </motion.div>
-        <div className="w-full relative overflow-hidden h-full md:h-[44rem] px-4 md:px-0">
+        <div className="w-full relative overflow-hidden h-full md:h-auto px-4 md:px-0">
           <motion.div
             initial={{
               opacity: 0,
@@ -51,11 +51,6 @@ const HospitalSection = () => {
           <div className="relative z-10 h-auto w-full overflow-hidden rounded-lg border bg-background">
             <CobeDraggableAuto />
           </div>
-          {/* <p className="text-gray-600 text-base sm:text-lg max-w-md mt-4 md:mt-0 font-nunito animate-blurText">
-            Our strong association with over 80 leading cancer treatment
-            hospitals in India ensures hassle-free treatment with our CAR-T cell
-            therapies.
-          </p> */}
           <BlurText
             text={`Our strong association with over 80\nleading cancer treatment hospitals in India ensures hassle-free treatment with our CAR-T cell therapies.`}
             delay={150}
