@@ -117,8 +117,9 @@ module.exports = {
   				'Outfit',
   				'Avenir',
   				'Nunito Sans',
-                    ...fontFamily.sans
-                ],
+  				'Roboto',
+  				...fontFamily.sans
+  			],
   			questrial: 'Questrial',
   			manrope: [
   				'Manrope',

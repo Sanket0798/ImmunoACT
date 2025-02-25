@@ -1,4 +1,4 @@
-import { Poppins, Mona_Sans, Lexend, Outfit } from "next/font/google";
+import { Poppins, Mona_Sans, Lexend, Outfit, Roboto } from "next/font/google";
 import "./styles/globals.css";
 import HomePage from "./page";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -28,6 +28,13 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-outfit",
+});
+
+// Configure Roboto font
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
 });
 
 const aboro = localFont({
@@ -89,7 +96,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${monaSans.variable} ${lexend.variable} ${outfit.variable} ${aboro.variable} ${astoFuturistic.variable} ${avenir.variable} antialiased font-sans`}
+        className={`${poppins.variable} ${monaSans.variable} ${lexend.variable} ${outfit.variable} ${aboro.variable} ${astoFuturistic.variable} ${avenir.variable} ${roboto.variable} antialiased font-sans`}
       >
         <HomePage>{children}</HomePage>
         <SpeedInsights />
