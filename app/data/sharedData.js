@@ -155,3 +155,28 @@ export const partners = [
     img: "/assets/sections/PartnerSection/TMH.png",
   },
 ];
+
+export const dataSteps = [
+  {
+    title: "End to end cell and gene therapy solutions",
+    code: "npx create-react-app my-app",
+  },
+  {
+    title: "Expertise in novel therapeutic design and plasmid DNA production",
+    code: "cd my-app",
+  },
+  {
+    title:
+      "Expertise in GMP grade viral vectors manufacturing & advanced ex-VIVO genetic engineering",
+    code: "npm start",
+  },
+  {
+    title:
+      "Maintaining global standards of cell therapy products with a dedicated quality control facility",
+    code: "npm run build",
+  },
+  {
+    title:
+      "Trained teams for clinical trials, regulatory compliances, Marketing and customer support",
+  },
+];
