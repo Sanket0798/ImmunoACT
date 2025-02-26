@@ -59,7 +59,7 @@ export function CobeDraggableAuto() {
     <div
       style={{
         width: "100%",
-        maxWidth: 600,
+        maxWidth: 800,
         aspectRatio: 1,
         margin: "auto",
         position: "relative",
