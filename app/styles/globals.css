@@ -84,6 +84,13 @@ html {
   padding-right: max(1rem, env(safe-area-inset-right));
 }
 
+@font-face {
+  font-family: "Pockota";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/PockotaMedium/Pockota-Medium.otf") format("truetype");
+}
+
 @media (max-width: 768px) {
   button,
   input,
