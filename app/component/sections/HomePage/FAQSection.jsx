@@ -7,16 +7,36 @@ import { motion } from "framer-motion";
 
 const FAQSection = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-3 md:pt-4 lg:pt-0 2xl:pt-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+        className="flex items-center gap-3 sm:gap-4 mb-3"
+      >
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "3rem" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          className="h-[1px] bg-black"
+        />
+        <motion.span
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+          className="text-2xl md:text-4xl font-bold text-[#232e24] sm:text-4xl font-outfit"
+        >
+          FAQs
+        </motion.span>
+      </motion.div>
+
       <div className="w-full h-auto">
         <Accordion>
-          {questions.slice(0, 5).map((question, index) => (
-            <React.Fragment key={question.id || index}>
-              <Tab>
-                <Trigger>{question.question}</Trigger>
-                <Content>{question.answer}</Content>
-              </Tab>
-            </React.Fragment>
+          {questions.slice(0, 5).map(({ id, question, answer }, index) => (
+            <Tab key={id || index}>
+              <Trigger>{question}</Trigger>
+              <Content>{answer}</Content>
+            </Tab>
           ))}
         </Accordion>
         <div className="mt-5 flex justify-center">
@@ -26,7 +46,7 @@ const FAQSection = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              View More FAQs{" "}
+              View More FAQs
             </motion.button>
           </Link>
         </div>
