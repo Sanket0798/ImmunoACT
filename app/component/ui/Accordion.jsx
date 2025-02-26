@@ -21,7 +21,7 @@ export const Tab = ({ children, className }) => {
 
   return (
     <TabContext.Provider value={{ isOpen, setOpenState }}>
-      <div className={`bg-bg w-full py-4 md:py-6 px-4 md:px-0 ${className || ""}`}>
+      <div className={`bg-bg w-full py-4 md:py-4 lg:py-6 px-4 md:px-0 ${className || ""}`}>
         {children}
       </div>
     </TabContext.Provider>
