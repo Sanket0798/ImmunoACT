@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Layers, Zap, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Play, ArrowRight } from "lucide-react";
 import HeroVideoDialog from "../../../../components/magicui/hero-video-dialog";
@@ -32,21 +33,25 @@ const hoverEffect = {
 };
 
 const CellTherapySection = () => {
-  const [isHoveredTop, setIsHoveredTop] = useState(false);
-  const [isHoveredBottom, setIsHoveredBottom] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [isHoveredTopCard1, setIsHoveredTopCard1] = useState(false);
+  const [isHoveredTopCard2, setIsHoveredTopCard2] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <section className="w-full py-12 sm:py-16">
-      <div className="container mx-auto px-4">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-3 gap-4 h-auto"
-        >
-          {/* Left Column Cards */}
-          <div className="flex flex-col gap-4 col-span-1">
-            {/* Top Left Card */}
+    <div className="container mx-auto px-4 py-4 md:py-0 md:px-6 lg:px-8">
+      <main className="w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
+          {/* Left column with 2 cards - takes 2/5 of the space */}
+          <div className="lg:col-span-2 flex flex-col space-y-4 md:space-y-6">
+            {/* Card 1 */}
             <motion.div
               className="bg-black relative group"
               initial={{ opacity: 0, y: 20 }}
@@ -61,16 +66,16 @@ const CellTherapySection = () => {
                   </h2>
                   <motion.span
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full text-sm bg-black text-white overflow-hidden"
-                    onHoverStart={() => setIsHoveredTop(true)}
-                    onHoverEnd={() => setIsHoveredTop(false)}
+                    onHoverStart={() => setIsHoveredTopCard1(true)}
+                    onHoverEnd={() => setIsHoveredTopCard1(false)}
                     animate={{
-                      width: isHoveredTop ? 80 : 32,
-                      padding: isHoveredTop ? "0 8px" : "0",
+                      width: isHoveredTopCard1 ? 80 : 32,
+                      padding: isHoveredTopCard1 ? "0 8px" : "0",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     <ArrowRight className="w-4 h-4" />
-                    {isHoveredTop && (
+                    {isHoveredTopCard1 && (
                       <motion.span
                         className="ml-2"
                         initial={{ opacity: 0 }}
@@ -95,7 +100,7 @@ const CellTherapySection = () => {
               </div>
             </motion.div>
 
-            {/* Bottom Left Card */}
+            {/* Card 2 */}
             <motion.div
               className="bg-black relative group"
               initial={{ opacity: 0, y: 20 }}
@@ -106,20 +111,20 @@ const CellTherapySection = () => {
               <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-3xl rounded-bl-3xl border-2 border-black p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-semibold text-gray-900 roboto-font">
-                    Our Pipeline
+                    Our Platform
                   </h2>
                   <motion.span
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full text-sm bg-black text-white overflow-hidden"
-                    onHoverStart={() => setIsHoveredTop(true)}
-                    onHoverEnd={() => setIsHoveredTop(false)}
+                    onHoverStart={() => setIsHoveredTopCard2(true)}
+                    onHoverEnd={() => setIsHoveredTopCard2(false)}
                     animate={{
-                      width: isHoveredTop ? 80 : 32,
-                      padding: isHoveredTop ? "0 8px" : "0",
+                      width: isHoveredTopCard2 ? 80 : 32,
+                      padding: isHoveredTopCard2 ? "0 8px" : "0",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     <ArrowRight className="w-4 h-4" />
-                    {isHoveredTop && (
+                    {isHoveredTopCard2 && (
                       <motion.span
                         className="ml-2"
                         initial={{ opacity: 0 }}
@@ -131,46 +136,37 @@ const CellTherapySection = () => {
                     )}
                   </motion.span>
                 </div>
-                <img
-                  src="/assets/sections/CellTherapySection/Our_Pipeline.jpg"
-                  alt="Our Pipeline"
-                  className="w-full h-auto mb-4 rounded-lg"
-                  loading="lazy"
-                />
                 <p className="text-gray-600">
-                  Learn more about our therapies in development and their
-                  potential indications.
+                  Learn more about our process and explore partnership
+                  opportunities.
                 </p>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Card - Video */}
-          <div className="col-span-2 relative bg-[#f4d6cc] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden flex flex-col">
-            <div className="space-y-2 mb-4">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">
-                Our Patient Journey
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-500 leading-relaxed">
+          {/* Right column with 1 tall card - takes 3/5 of the space */}
+          <div className="lg:col-span-3">
+            <div className="bg-[#f4d6cc] rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border h-full flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">
+                  Our Patient Journey
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base md:text-lg text-gray-500 leading-relaxed mb-4">
                 Understanding CAR-T therapy is crucial in supporting your loved
                 one's treatment journey. We provide resources, guidance, and
                 support to help you navigate this path together.
               </p>
-            </div>
-            <div className="relative flex justify-center mb-6 flex-shrink-0">
-              <HeroVideoDialog
-                className="block dark:hidden"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/Ve90D82fEL0?si=LGyLKdCbeWdUOke6"
-                thumbnailSrc="/assets/sections/CellTherapySection/Patient_Journey.png"
-                thumbnailAlt="Hero Video"
-              />
-            </div>
-            <div className="space-y-2 flex-grow">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
-                Real Stories of Hope
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+              <div className="relative flex justify-center mb-6 flex-shrink-0">
+                <HeroVideoDialog
+                  className="block dark:hidden"
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/Ve90D82fEL0?si=LGyLKdCbeWdUOke6"
+                  thumbnailSrc="/assets/sections/CellTherapySection/Patient_Journey.png"
+                  thumbnailAlt="Hero Video"
+                />
+              </div>
+              <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4">
                 To advance the research and development of our innovative
                 gene-modified cell therapies, we are fostering relationships
                 across academia, healthcare institutions, and strategic
@@ -178,9 +174,9 @@ const CellTherapySection = () => {
               </p>
             </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </main>
+    </div>
   );
 };
 
