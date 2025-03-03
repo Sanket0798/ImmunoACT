@@ -53,18 +53,18 @@ const CellTherapySection = () => {
           <div className="lg:col-span-2 flex flex-col space-y-4 md:space-y-6">
             {/* Card 1 */}
             <motion.div
-              className="bg-black relative group"
+              className="bg-black relative group rounded-tr-[30px] rounded-bl-[30px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.25, 0.25, 0, 1] }}
             >
-              <div className="absolute inset-0 rounded-tl-2xl rounded-br-2xl border-2 border-black transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-              <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-3xl rounded-bl-3xl border-2 border-black p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-tl-2xl rounded-br-2xl transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+              <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-[30px] rounded-bl-[30px] p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-semibold text-gray-900 roboto-font">
                     Our Pipeline
                   </h2>
-                  <motion.span
+                  <motion.button
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full text-sm bg-black text-white overflow-hidden"
                     onHoverStart={() => setIsHoveredTopCard1(true)}
                     onHoverEnd={() => setIsHoveredTopCard1(false)}
@@ -85,7 +85,7 @@ const CellTherapySection = () => {
                         More
                       </motion.span>
                     )}
-                  </motion.span>
+                  </motion.button>
                 </div>
                 <img
                   src="/assets/sections/CellTherapySection/Our_Pipeline.jpg"
@@ -102,18 +102,18 @@ const CellTherapySection = () => {
 
             {/* Card 2 */}
             <motion.div
-              className="bg-black relative group"
+              className="bg-black relative group rounded-tr-[30px] rounded-bl-[30px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.25, 0.25, 0, 1] }}
             >
-              <div className="absolute inset-0 rounded-tl-2xl rounded-br-2xl border-2 border-black transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-              <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-3xl rounded-bl-3xl border-2 border-black p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-tl-2xl rounded-br-2xl  transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+              <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-[30px] rounded-bl-[30px] p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-semibold text-gray-900 roboto-font">
                     Our Platform
                   </h2>
-                  <motion.span
+                  <motion.button
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full text-sm bg-black text-white overflow-hidden"
                     onHoverStart={() => setIsHoveredTopCard2(true)}
                     onHoverEnd={() => setIsHoveredTopCard2(false)}
@@ -134,7 +134,7 @@ const CellTherapySection = () => {
                         More
                       </motion.span>
                     )}
-                  </motion.span>
+                  </motion.button>
                 </div>
                 <p className="text-gray-600">
                   Learn more about our process and explore partnership
