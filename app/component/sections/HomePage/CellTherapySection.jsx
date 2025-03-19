@@ -62,7 +62,7 @@ const CellTherapySection = () => {
               <div className="relative bg-white/85 backdrop-blur-xl rounded-tr-[30px] rounded-bl-[30px] p-6 transition-all duration-600 group-hover:-translate-x-2 group-hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-semibold text-gray-900 roboto-font">
-                    Our Pipelin
+                    Our Pipeline
                   </h2>
                   <motion.button
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full text-sm bg-black text-white overflow-hidden"
