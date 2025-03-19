@@ -6,6 +6,7 @@ import PartnerSection from "../component/sections/HomePage/PartnerSection";
 // import PatientStorySection from "../component/sections/HomePage/PatientStorySection";
 import FacilitySection from "../component/sections/HomePage/FacilitySection";
 import FAQSection from "../component/sections/HomePage/FAQSection";
+// import Hospital from "@/app/pages/HospitalPage";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       {/* <PatientStorySection /> */}
       <FacilitySection />
       <FAQSection />
+      {/* <Hospital /> */}
     </>
   );
 };
