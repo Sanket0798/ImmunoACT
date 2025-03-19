@@ -2,13 +2,14 @@
 import React from "react";
 // import { motion } from "framer-motion";
 import { CobeDraggableAuto } from "../../../../components/eldoraui/cobeglobeautodraggable";
-// import BlurText from "../../../../animations/BlurText/BlurText";
+import { CobeDragToLocation } from "../../../../components/eldoraui/cobegloberotatetolocation";
+import BlurText from "../../../../animations/BlurText/BlurText";
 import { motion, stagger } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// const handleAnimationComplete = () => {
-//   console.log("Animation completed!");
-// };
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const HospitalSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,6 +33,7 @@ const HospitalSection = () => {
   const child = {
     visible: {
       opacity: 1,
+
       filter: "blur(0px)",
       y: 0,
       transition: {
@@ -175,7 +177,7 @@ const HospitalSection = () => {
               className="div"
             ></motion.div>
             <div className="relative z-10 h-auto w-full overflow-hidden rounded-lg border bg-background">
-              <CobeDraggableAuto />
+              <CobeDragToLocation />
             </div>
           </div>
 
@@ -248,9 +250,12 @@ const HospitalSection = () => {
             <div className="relative z-10 h-auto w-full overflow-hidden rounded-lg border bg-background">
               <CobeDraggableAuto />
             </div>
+            {/* <div className="relative z-10 h-auto w-full overflow-hidden rounded-lg border bg-background">
+              <CobeDragToLocation />
+            </div> */}
           </div>
 
-          <motion.div
+          {/* <motion.div
             className="absolute -bottom-20 right-0 z-20 max-w-3xl"
             variants={container}
             initial="hidden"
@@ -274,7 +279,16 @@ const HospitalSection = () => {
                 </motion.span>
               ))}
             </p>
-          </motion.div>
+          </motion.div> */}
+
+          <BlurText
+            text={`Our strong association with over\n80 leading cancer treatment hospitals in India ensures\nhassle-free treatment with our CAR-T cell therapies.`}
+            delay={150}
+            animateBy="words"
+            direction="top"
+            // onAnimationComplete={handleAnimationComplete}
+            className="text-right text-3xl font-semibold font-pockota"
+          />
         </div>
       </div>
     </section>
